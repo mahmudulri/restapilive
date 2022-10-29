@@ -10,8 +10,6 @@ class Homepage extends StatefulWidget {
   State<Homepage> createState() => _HomepageState();
 }
 
-// Map<String, dynamic> todos = {};
-
 class _HomepageState extends State<Homepage> {
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
@@ -99,14 +97,14 @@ class _HomepageState extends State<Homepage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Add data"),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Update data"),
-                          ),
+                          // ElevatedButton(
+                          //   onPressed: () {},
+                          //   child: Text("Add data"),
+                          // ),
+                          // ElevatedButton(
+                          //   onPressed: () {},
+                          //   child: Text("Update data"),
+                          // ),
                         ],
                       ),
                     ],
@@ -121,36 +119,9 @@ class _HomepageState extends State<Homepage> {
                 decoration: BoxDecoration(
                   color: Colors.grey.shade600,
                 ),
-                child: ListView.separated(
-                    itemBuilder: ((context, index) {
-                      return Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.white30,
-                        ),
-                        child: ListTile(
-                          leading: Icon(Icons.person),
-                          title: Text(todos["notes"][index]["title"]),
-                          subtitle: Text(todos["notes"][index]["description"]),
-                          trailing: Wrap(
-                            spacing: 10,
-                            children: [
-                              Icon(
-                                Icons.delete,
-                                color: Colors.red.shade300,
-                              ),
-                              Icon(Icons.edit),
-                            ],
-                          ),
-                        ),
-                      );
-                    }),
-                    separatorBuilder: ((context, index) {
-                      return SizedBox(
-                        height: 5,
-                      );
-                    }),
-                    itemCount: todos["notes"].length),
+                // child: ListView.builder(
+                //   itemCount: todos["notes"].,
+                // )
               ),
             ),
           ],

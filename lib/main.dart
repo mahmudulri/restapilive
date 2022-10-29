@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:restapilive/homepage.dart';
-import 'package:restapilive/singledata.dart';
+import 'package:restapilive/myapi/viewpage.dart';
+import 'package:restapilive/productmodule/views/product_list_view.dart';
+import 'package:restapilive/userapi/userview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +20,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: SingleData());
+        home: UserViewPage());
   }
 }
