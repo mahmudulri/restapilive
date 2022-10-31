@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restapilive/eventsfetch/event_view.dart';
 import 'package:restapilive/homepage.dart';
 import 'package:restapilive/myapi/viewpage.dart';
 import 'package:restapilive/productmodule/views/product_list_view.dart';
@@ -20,6 +21,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: UserViewPage());
+        home: EventView());
   }
 }
