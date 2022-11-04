@@ -12,19 +12,6 @@ class EventsController extends GetxController {
     super.onInit();
   }
 
-//   void fetch_events() async {
-//     try {
-//       isLoading(true);
-//       var allevents = await EventsApi.fetchEvents();
-//       if (allevents != null) {
-//         alleventsdata.value = allevents as List<AlleventsModel>;
-//         print(allevents);
-//       }
-//     } finally {
-//       isLoading(false);
-//     }
-//   }
-
   Future<void> fetchAllevent() async {
     isLoading(true);
     try {

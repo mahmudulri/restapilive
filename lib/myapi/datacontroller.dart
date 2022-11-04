@@ -19,8 +19,8 @@ class AllnotesController extends GetxController {
       if (allpost != null) {
         mynotelist.value = allpost;
       }
-    } finally {
-      isLoading(false);
+    } catch (e) {
+      print(e.toString());
     }
   }
 }

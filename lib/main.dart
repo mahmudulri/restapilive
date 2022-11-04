@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:restapilive/checkmyip/myipview.dart';
 import 'package:restapilive/eventsfetch/event_view.dart';
 import 'package:restapilive/homepage.dart';
 import 'package:restapilive/myapi/viewpage.dart';
 import 'package:restapilive/productmodule/views/product_list_view.dart';
+import 'package:restapilive/randomjoke/jokeview.dart';
+import 'package:restapilive/university/universityview.dart';
 import 'package:restapilive/userapi/userview.dart';
 
 void main() {
@@ -21,6 +24,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: EventView());
+        home: CheckMyip());
   }
 }
