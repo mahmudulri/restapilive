@@ -40,11 +40,13 @@ class UniversityList extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                      "Name : ${univcontroller.allunivdatalist[index].alphaTwoCode}"),
+                                      "Name : ${univcontroller.allunivdatalist[index].name}"),
                                   Text(
                                       "Domain : ${univcontroller.allunivdatalist[index].domains![0]}"),
                                   Text(
                                       "Country : ${univcontroller.allunivdatalist[index].country.toString()}"),
+                                  Text(
+                                      "Alpha two codee : ${univcontroller.allunivdatalist[index].alphaTwoCode.toString()}"),
                                 ],
                               ),
                             ),

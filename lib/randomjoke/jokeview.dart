@@ -3,15 +3,33 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:restapilive/randomjoke/jokecontroller.dart';
+import 'package:restapilive/userapi/userview.dart';
 
-class JokesView extends StatelessWidget {
+class JokesView extends StatefulWidget {
   JokesView({super.key});
 
+  @override
+  State<JokesView> createState() => _JokesViewState();
+}
+
+class _JokesViewState extends State<JokesView> {
   final JokesController jokesController = Get.put(JokesController());
+
+  // void initState() {
+  //   super.initState();
+
+  //   Future.delayed(
+  //       Duration(seconds: 5),
+  //       () => Navigator.push(
+  //             context,
+  //             MaterialPageRoute(builder: (context) => JokesView()),
+  //           ));
+  //   jokesController.fetchJokes();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    // Timer(Duration(seconds: 2), () => jokesController.fetchJokes());
+    // Timer(Duration(seconds: 2), () => UserViewPage());
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -66,11 +84,12 @@ class JokesView extends StatelessWidget {
                                   height: 20,
                                 ),
                                 ElevatedButton(
-                                    onPressed: () {
-                                      jokesController.fetchJokes();
-                                      print("change");
-                                    },
-                                    child: Text("Change now"))
+                                  onPressed: () {
+                                    jokesController.fetchJokes();
+                                    print("change");
+                                  },
+                                  child: Text("Change now"),
+                                ),
                               ],
                             ),
                           ),

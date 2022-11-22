@@ -22,18 +22,18 @@ class UniversityModel {
   });
 
   List<String>? domains;
-  AlphaTwoCode? alphaTwoCode;
+  String? alphaTwoCode;
   List<String>? webPages;
-  Country? country;
+  String? country;
   String? stateProvince;
   String? name;
 
   factory UniversityModel.fromJson(Map<String, dynamic> json) =>
       UniversityModel(
         domains: List<String>.from(json["domains"].map((x) => x)),
-        alphaTwoCode: alphaTwoCodeValues.map[json["alpha_two_code"]],
+        alphaTwoCode: json["alpha_two_code"],
         webPages: List<String>.from(json["web_pages"].map((x) => x)),
-        country: countryValues.map[json["country"]],
+        country: json["country"],
         stateProvince:
             json["state-province"] == null ? null : json["state-province"],
         name: json["name"],
@@ -41,32 +41,32 @@ class UniversityModel {
 
   Map<String, dynamic> toJson() => {
         "domains": List<dynamic>.from(domains!.map((x) => x)),
-        "alpha_two_code": alphaTwoCodeValues.reverse![alphaTwoCode],
+        "alpha_two_code": alphaTwoCode,
         "web_pages": List<dynamic>.from(webPages!.map((x) => x)),
-        "country": countryValues.reverse![country],
+        "country": country,
         "state-province": stateProvince == null ? null : stateProvince,
         "name": name,
       };
 }
 
-enum AlphaTwoCode { US }
+// enum AlphaTwoCode { US }
 
-final alphaTwoCodeValues = EnumValues({"US": AlphaTwoCode.US});
+// final alphaTwoCodeValues = EnumValues({"US": AlphaTwoCode.US});
 
-enum Country { UNITED_STATES }
+// enum Country { UNITED_STATES }
 
-final countryValues = EnumValues({"United States": Country.UNITED_STATES});
+// final countryValues = EnumValues({"United States": Country.UNITED_STATES});
 
-class EnumValues<T> {
-  Map<String, T> map;
-  Map<T, String>? reverseMap;
+// class EnumValues<T> {
+//   Map<String, T> map;
+//   Map<T, String>? reverseMap;
 
-  EnumValues(this.map);
+//   EnumValues(this.map);
 
-  Map<T, String>? get reverse {
-    if (reverseMap == null) {
-      reverseMap = map.map((k, v) => new MapEntry(v, k));
-    }
-    return reverseMap;
-  }
-}
+//   Map<T, String>? get reverse {
+//     if (reverseMap == null) {
+//       reverseMap = map.map((k, v) => new MapEntry(v, k));
+//     }
+//     return reverseMap;
+//   }
+// }

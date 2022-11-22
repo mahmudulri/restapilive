@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:restapilive/userapi/usercontroller.dart';
+import 'package:restapilive/userapi/userdetails.dart';
 
-class UserViewPage extends StatelessWidget {
+class UserViewPage extends StatefulWidget {
   UserViewPage({super.key});
 
+  @override
+  State<UserViewPage> createState() => _UserViewPageState();
+}
+
+class _UserViewPageState extends State<UserViewPage> {
   final UserController userController = Get.put(UserController());
+
+  String name = "hasan";
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +76,39 @@ class UserViewPage extends StatelessWidget {
                                           style: ElevatedButton.styleFrom(
                                             backgroundColor: Colors.grey,
                                           ),
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Get.to(UserDetailsPage(
+                                              name:
+                                                  "${userController.alluserlist.value[index].name}",
+                                              street:
+                                                  "${userController.alluserlist.value[index].address!.street}",
+                                            ));
+
+                                            // Get.defaultDialog(
+                                            //   title: "Name "
+                                            //       "${userController.alluserlist.value[index].username}",
+                                            //   content: Column(
+                                            //     children: [
+                                            //       Text(userController
+                                            //           .alluserlist
+                                            //           .value[index]
+                                            //           .address!
+                                            //           .street
+                                            //           .toString()),
+                                            //       Text(userController
+                                            //           .alluserlist
+                                            //           .value[index]
+                                            //           .address!
+                                            //           .zipcode
+                                            //           .toString()),
+                                            //     ],
+                                            //   ),
+                                            // );
+                                          },
                                           child: Text("Show Details"),
                                         ),
                                       ],
-                                    ),
+                                    )
                                   ],
                                 ),
                               ),
