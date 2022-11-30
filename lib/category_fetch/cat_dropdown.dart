@@ -11,7 +11,16 @@ class CatDropDownSearch extends StatefulWidget {
   State<CatDropDownSearch> createState() => _CatDropDownSearchState();
 }
 
+bool _obscureText = true;
+String? _password;
+
 class _CatDropDownSearchState extends State<CatDropDownSearch> {
+  void _toggle() {
+    setState(() {
+      _obscureText = !_obscureText;
+    });
+  }
+
   final CategoryController catcontroller = Get.put(CategoryController());
   @override
   Widget build(BuildContext context) {
@@ -21,16 +30,21 @@ class _CatDropDownSearchState extends State<CatDropDownSearch> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            DropdownSearch<CategoryModel>(
-              asyncItems: (String filter) =>
-                  catcontroller.fetchAllCategoryList(),
-              itemAsString: (CategoryModel u) => u.userAsStringByName(),
-              onChanged: (CategoryModel? data) => print(data),
-              dropdownDecoratorProps: DropDownDecoratorProps(
-                dropdownSearchDecoration:
-                    InputDecoration(labelText: "User by name"),
+            TextFormField(
+              decoration: InputDecoration(
+                suffixIcon: InkWell(
+                    onTap: () {
+                      _toggle();
+                    },
+                    child: Icon(
+                      Icons.remove_red_eye,
+                      color: _obscureText ? Colors.grey : Colors.green,
+                    )),
+                labelText: 'Password',
               ),
-            )
+              onSaved: (val) => _password = val,
+              obscureText: _obscureText,
+            ),
           ],
         ),
       ),

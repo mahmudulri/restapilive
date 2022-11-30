@@ -27,6 +27,10 @@ class CategoryModel {
             json["department"].map((x) => Department.fromJson(x))),
       );
 
+  List<CategoryModel> fromJsonList(List list) {
+    return list.map((item) => CategoryModel.fromJson(item)).toList();
+  }
+
   Map<String, dynamic> toJson() => {
         "status": status,
         "total_departments": totalDepartments,

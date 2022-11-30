@@ -5,6 +5,7 @@ import 'package:restapilive/category_fetch/category_view.dart';
 import 'package:restapilive/checkmyip/myipview.dart';
 import 'package:restapilive/draft.dart';
 import 'package:restapilive/eventsfetch/event_view.dart';
+import 'package:restapilive/file_picker/filepickview.dart';
 import 'package:restapilive/homepage.dart';
 import 'package:restapilive/myapi/viewpage.dart';
 import 'package:restapilive/productmodule/views/product_list_view.dart';
@@ -28,6 +29,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: CatDropDownSearch());
+        home: FilePickerImage());
   }
 }
